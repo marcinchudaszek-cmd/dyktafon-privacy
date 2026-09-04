@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polityka prywatności — Dyktafon AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1e293b; background: #fff;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: .35rem; }
+  .updated { color: #64748b; font-size: .9rem; margin-top: 0; }
+  .box { background: #f1f5f9; border-left: 4px solid #6366f1; padding: .9rem 1.1rem; border-radius: 0 .5rem .5rem 0; margin: 1.25rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background: #f8fafc; }
+  code { background: #f1f5f9; padding: .1rem .35rem; border-radius: .25rem; font-size: .9em; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; color: #64748b; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e2e8f0; background: #0f172a; }
+    h2 { border-color: #334155; }
+    .box { background: #1e293b; }
+    th { background: #1e293b; }
+    th, td { border-color: #334155; }
+    code { background: #1e293b; }
+    footer { border-color: #334155; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Polityka prywatności — Dyktafon AI</h1>
+<p class="updated">Ostatnia aktualizacja: 4 września 2026</p>
+
+<div class="box">
+  <strong>W skrócie:</strong> Twoje nagrania są przechowywane wyłącznie na Twoim telefonie.
+  Nie mam do nich dostępu, nie zbieram żadnych danych i nie ma w aplikacji reklam ani analityki.
+  Cokolwiek opuszcza telefon, dzieje się dopiero wtedy, gdy sam włączysz transkrypcję lub tłumaczenie.
+</div>
+
+<h2>1. Kto odpowiada za aplikację</h2>
+<p>
+  Aplikacja <strong>Dyktafon AI</strong> jest projektem prywatnym. Kontakt w sprawach prywatności:
+  <strong><a href="mailto:beagleappsstudio@gmail.com">beagleappsstudio@gmail.com</a></strong>
+</p>
+
+<h2>2. Jakie dane przetwarza aplikacja</h2>
+<table>
+  <tr><th>Dane</th><th>Gdzie trafiają</th><th>Po co</th></tr>
+  <tr>
+    <td>Nagrania dźwiękowe</td>
+    <td>Wyłącznie pamięć Twojego telefonu</td>
+    <td>Podstawowa funkcja dyktafonu</td>
+  </tr>
+  <tr>
+    <td>Transkrypcje, tytuły i notatki</td>
+    <td>Wyłącznie pamięć Twojego telefonu</td>
+    <td>Zapis tekstu przy nagraniu</td>
+  </tr>
+  <tr>
+    <td>Klucz API Gemini (jeśli go wpiszesz)</td>
+    <td>Wyłącznie pamięć Twojego telefonu</td>
+    <td>Uwierzytelnienie Twoich własnych zapytań do Google</td>
+  </tr>
+  <tr>
+    <td>Ustawienia (motyw, język, prędkość czytania)</td>
+    <td>Wyłącznie pamięć Twojego telefonu</td>
+    <td>Zapamiętanie Twoich preferencji</td>
+  </tr>
+</table>
+
+<p>
+  <strong>Nie zbieram żadnych z tych danych.</strong> Nie ma serwera aplikacji, konta użytkownika,
+  logowania, analityki, reklam ani identyfikatorów śledzących. Nagrania nie są nigdzie kopiowane
+  automatycznie — aplikacja ma nawet wyłączoną systemową kopię zapasową Androida, żeby nagrania
+  nie trafiały do Twojego Dysku Google.
+</p>
+
+<h2>3. Kiedy dane opuszczają telefon</h2>
+<p>Tylko w trzech sytuacjach, z których każdą uruchamiasz świadomie:</p>
+
+<h3>a) Transkrypcja nagrania (opcjonalna)</h3>
+<p>
+  Działa dopiero po wpisaniu <strong>własnego</strong> klucza API Google Gemini. Wtedy plik dźwiękowy
+  wybranego nagrania jest wysyłany do <strong>Google (Gemini API)</strong> w celu zamiany mowy na tekst.
+  Odbywa się to na Twoim koncie Google i podlega
+  <a href="https://policies.google.com/privacy">polityce prywatności Google</a> oraz
+  <a href="https://ai.google.dev/gemini-api/terms">warunkom Gemini API</a>.
+  Bez wpisanego klucza <strong>żadne nagranie nie jest nigdzie wysyłane</strong>.
+</p>
+
+<h3>b) Notatki i tytuły tworzone przez AI (opcjonalne)</h3>
+<p>
+  Gdy naciśniesz „Notatka AI", tekst transkrypcji jest wysyłany do Google (Gemini API), by powstało
+  streszczenie. Ta sama zasada: wymaga Twojego klucza i Twojego kliknięcia.
+</p>
+
+<h3>c) Tłumaczenie (opcjonalne)</h3>
+<p>
+  Gdy korzystasz z tłumaczenia, tłumaczony tekst jest wysyłany do serwisu
+  <a href="https://mymemory.translated.net/doc/">MyMemory (Translated s.r.l.)</a>, a przy ustawionym
+  kluczu — do Google Gemini. Wysyłany jest wyłącznie sam tekst, nigdy plik dźwiękowy.
+</p>
+
+<div class="box">
+  <strong>Jeśli nie wpiszesz klucza API i nie użyjesz tłumaczenia, aplikacja działa całkowicie
+  offline i nic nie opuszcza Twojego telefonu.</strong>
+</div>
+
+<h2>4. Uprawnienia i po co są potrzebne</h2>
+<table>
+  <tr><th>Uprawnienie</th><th>Do czego służy</th></tr>
+  <tr><td><code>RECORD_AUDIO</code> (mikrofon)</td><td>Nagrywanie dźwięku oraz rozpoznawanie mowy na żywo. Bez tego aplikacja nie ma sensu.</td></tr>
+  <tr><td><code>FOREGROUND_SERVICE_MICROPHONE</code></td><td>Utrzymanie nagrywania, gdy zgasisz ekran lub przełączysz się do innej aplikacji. W trakcie widoczne jest stałe powiadomienie.</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Wyświetlenie powiadomienia „Nagrywanie w toku". Możesz go odmówić — nagrywanie nadal działa.</td></tr>
+  <tr><td><code>INTERNET</code></td><td>Wyłącznie opcjonalna transkrypcja i tłumaczenie opisane w punkcie 3.</td></tr>
+</table>
+<p>
+  Mikrofon jest używany tylko wtedy, gdy sam rozpoczniesz nagrywanie lub transkrypcję na żywo.
+  Aplikacja nie nasłuchuje w tle.
+</p>
+
+<h2>5. Jak długo dane są przechowywane</h2>
+<p>
+  Nagrania i teksty zostają na telefonie, dopóki ich nie usuniesz. Usunięcie nagrania w aplikacji
+  kasuje je trwale. Odinstalowanie aplikacji usuwa wszystkie nagrania, transkrypcje i zapisany
+  klucz API. Nie ma kopii, którą mógłbym odtworzyć — o kopie zapasowe nagrań, na których Ci zależy,
+  musisz zadbać sam, udostępniając je poza aplikację.
+</p>
+
+<h2>6. Dzieci</h2>
+<p>
+  Aplikacja nie jest skierowana do dzieci poniżej 13 roku życia i nie zbiera świadomie ich danych.
+</p>
+
+<h2>7. Twoje prawa</h2>
+<p>
+  Ponieważ nie zbieram ani nie przechowuję żadnych Twoich danych, nie mam czego udostępnić, poprawić
+  ani usunąć na Twoje żądanie — pełną kontrolę masz bezpośrednio w aplikacji i w ustawieniach telefonu.
+  W sprawie danych przekazanych do Google lub MyMemory należy zwrócić się do tych podmiotów zgodnie
+  z ich politykami prywatności, do których odnośniki znajdują się wyżej.
+</p>
+
+<h2>8. Zmiany polityki</h2>
+<p>
+  Jeśli aplikacja zacznie przetwarzać dane inaczej, zaktualizuję ten dokument i zmienię datę na górze
+  strony. Istotne zmiany zostaną opisane w informacjach o aktualizacji w Google Play.
+</p>
+
+<hr style="margin-top:2.5rem;border:0;border-top:1px solid #e2e8f0">
+
+<h1 style="font-size:1.35rem">Privacy Policy (English summary)</h1>
+<p>
+  <strong>Dyktafon AI</strong> is a voice recorder. All recordings, transcripts and settings are stored
+  <strong>only on your device</strong>. The developer collects no data whatsoever: there is no server,
+  no account, no analytics, no advertising and no tracking. Android's cloud backup is disabled for this
+  app, so recordings are not copied to your Google Drive.
+</p>
+<p>
+  Data leaves your device only when you deliberately use an optional feature:
+  <strong>(a)</strong> transcription and AI notes, which require <em>your own</em> Google Gemini API key
+  and send the selected recording or its transcript to Google;
+  <strong>(b)</strong> translation, which sends the text (never audio) to MyMemory and, if a key is set,
+  to Google Gemini. Without an API key and without using translation, the app works entirely offline.
+</p>
+<p>
+  The microphone is used only while you are actively recording; the app never listens in the background.
+  The foreground-service permission keeps a recording running while the screen is off and always shows
+  an ongoing notification. Uninstalling the app deletes all recordings, transcripts and the stored API key.
+</p>
+<p>Contact: <strong><a href="mailto:beagleappsstudio@gmail.com">beagleappsstudio@gmail.com</a></strong></p>
+
+<footer>
+  Dyktafon AI — polityka prywatności · ostatnia aktualizacja 4 września 2026
+</footer>
+
+</body>
+</html>
