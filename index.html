@@ -34,12 +34,13 @@
 <body>
 
 <h1>Polityka prywatności — Dyktafon AI</h1>
-<p class="updated">Ostatnia aktualizacja: 4 września 2026</p>
+<p class="updated">Ostatnia aktualizacja: 12 listopada 2026</p>
 
 <div class="box">
   <strong>W skrócie:</strong> Twoje nagrania są przechowywane wyłącznie na Twoim telefonie.
   Nie mam do nich dostępu, nie zbieram żadnych danych i nie ma w aplikacji reklam ani analityki.
-  Cokolwiek opuszcza telefon, dzieje się dopiero wtedy, gdy sam włączysz transkrypcję lub tłumaczenie.
+  Cokolwiek opuszcza telefon, dzieje się dopiero wtedy, gdy sam włączysz transkrypcję, dyktowanie,
+  tłumaczenie albo zapiszesz kopię nagrań.
 </div>
 
 <h2>1. Kto odpowiada za aplikację</h2>
@@ -67,7 +68,7 @@
     <td>Uwierzytelnienie Twoich własnych zapytań do Google</td>
   </tr>
   <tr>
-    <td>Ustawienia (motyw, język, prędkość czytania)</td>
+    <td>Ustawienia (motyw, języki, prędkość czytania)</td>
     <td>Wyłącznie pamięć Twojego telefonu</td>
     <td>Zapamiętanie Twoich preferencji</td>
   </tr>
@@ -81,16 +82,23 @@
 </p>
 
 <h2>3. Kiedy dane opuszczają telefon</h2>
-<p>Tylko w trzech sytuacjach, z których każdą uruchamiasz świadomie:</p>
+<p>Tylko w sytuacjach opisanych poniżej, z których każdą uruchamiasz świadomie:</p>
 
 <h3>a) Transkrypcja nagrania (opcjonalna)</h3>
 <p>
-  Działa dopiero po wpisaniu <strong>własnego</strong> klucza API Google Gemini. Wtedy plik dźwiękowy
-  wybranego nagrania jest wysyłany do <strong>Google (Gemini API)</strong> w celu zamiany mowy na tekst.
+  Działa dopiero po wpisaniu <strong>własnego</strong> klucza API Google Gemini. Od tej chwili każde
+  nowe nagranie jest po zakończeniu wysyłane do <strong>Google (Gemini API)</strong> w celu zamiany mowy
+  na tekst; starsze i importowane nagrania — gdy naciśniesz „Transkrybuj teraz". Klucz możesz w każdej
+  chwili usunąć w ustawieniach i wysyłanie ustaje.
   Odbywa się to na Twoim koncie Google i podlega
   <a href="https://policies.google.com/privacy">polityce prywatności Google</a> oraz
   <a href="https://ai.google.dev/gemini-api/terms">warunkom Gemini API</a>.
   Bez wpisanego klucza <strong>żadne nagranie nie jest nigdzie wysyłane</strong>.
+</p>
+<p>
+  Długie nagrania (powyżej 15 MB) są na czas transkrypcji zapisywane na serwerach Google jako plik
+  przypisany do Twojego klucza. Aplikacja usuwa ten plik zaraz po odebraniu tekstu; gdyby usunięcie
+  się nie powiodło, Google kasuje takie pliki samoczynnie po 48 godzinach.
 </p>
 
 <h3>b) Notatki i tytuły tworzone przez AI (opcjonalne)</h3>
@@ -106,9 +114,24 @@
   kluczu — do Google Gemini. Wysyłany jest wyłącznie sam tekst, nigdy plik dźwiękowy.
 </p>
 
+<h3>d) Dyktowanie na żywo w zakładce „Transkrypcja" (opcjonalne)</h3>
+<p>
+  Dyktowanie korzysta z usługi rozpoznawania mowy wbudowanej w telefon lub przeglądarkę (na Androidzie
+  zwykle jest to usługa Google). Podczas dyktowania dźwięk z mikrofonu trafia do tej usługi i — zależnie
+  od jej ustawień — może być przetwarzany na serwerach jej dostawcy. Aplikacja nie ma na to wpływu
+  i sama nie zapisuje tego dźwięku; zachowuje wyłącznie rozpoznany tekst.
+</p>
+
+<h3>e) Kopia nagrań i udostępnianie (opcjonalne)</h3>
+<p>
+  Przycisk „Kopia" tworzy na telefonie plik zip z nagraniami i tekstami, a „Udostępnij" przekazuje
+  pojedyncze nagranie lub tekst. W obu przypadkach plik trafia wyłącznie tam, gdzie sam go wyślesz
+  lub zapiszesz w systemowym oknie udostępniania.
+</p>
+
 <div class="box">
-  <strong>Jeśli nie wpiszesz klucza API i nie użyjesz tłumaczenia, aplikacja działa całkowicie
-  offline i nic nie opuszcza Twojego telefonu.</strong>
+  <strong>Jeśli nie wpiszesz klucza API i nie użyjesz dyktowania na żywo ani tłumaczenia, nic nie
+  opuszcza Twojego telefonu.</strong>
 </div>
 
 <h2>4. Uprawnienia i po co są potrzebne</h2>
@@ -116,8 +139,8 @@
   <tr><th>Uprawnienie</th><th>Do czego służy</th></tr>
   <tr><td><code>RECORD_AUDIO</code> (mikrofon)</td><td>Nagrywanie dźwięku oraz rozpoznawanie mowy na żywo. Bez tego aplikacja nie ma sensu.</td></tr>
   <tr><td><code>FOREGROUND_SERVICE_MICROPHONE</code></td><td>Utrzymanie nagrywania, gdy zgasisz ekran lub przełączysz się do innej aplikacji. W trakcie widoczne jest stałe powiadomienie.</td></tr>
-  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Wyświetlenie powiadomienia „Nagrywanie w toku". Możesz go odmówić — nagrywanie nadal działa.</td></tr>
-  <tr><td><code>INTERNET</code></td><td>Wyłącznie opcjonalna transkrypcja i tłumaczenie opisane w punkcie 3.</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Wyświetlenie powiadomienia o trwającym nagrywaniu z przyciskami pauzy i zatrzymania. Możesz go odmówić — nagrywanie nadal działa.</td></tr>
+  <tr><td><code>INTERNET</code></td><td>Wyłącznie opcjonalne funkcje opisane w punkcie 3.</td></tr>
 </table>
 <p>
   Mikrofon jest używany tylko wtedy, gdy sam rozpoczniesz nagrywanie lub transkrypcję na żywo.
@@ -127,9 +150,10 @@
 <h2>5. Jak długo dane są przechowywane</h2>
 <p>
   Nagrania i teksty zostają na telefonie, dopóki ich nie usuniesz. Usunięcie nagrania w aplikacji
-  kasuje je trwale. Odinstalowanie aplikacji usuwa wszystkie nagrania, transkrypcje i zapisany
-  klucz API. Nie ma kopii, którą mógłbym odtworzyć — o kopie zapasowe nagrań, na których Ci zależy,
-  musisz zadbać sam, udostępniając je poza aplikację.
+  kasuje je trwale (przez kilka sekund można je jeszcze cofnąć). Odinstalowanie aplikacji usuwa
+  wszystkie nagrania, transkrypcje i zapisany klucz API. Nie ma kopii, którą mógłbym odtworzyć —
+  o kopie zapasowe nagrań, na których Ci zależy, musisz zadbać sam: przyciskiem „Kopia" albo
+  udostępniając nagrania poza aplikację.
 </p>
 
 <h2>6. Dzieci</h2>
@@ -165,7 +189,14 @@
   <strong>(a)</strong> transcription and AI notes, which require <em>your own</em> Google Gemini API key
   and send the selected recording or its transcript to Google;
   <strong>(b)</strong> translation, which sends the text (never audio) to MyMemory and, if a key is set,
-  to Google Gemini. Without an API key and without using translation, the app works entirely offline.
+  to Google Gemini;
+  <strong>(c)</strong> live dictation, which uses the speech recognition service built into your phone
+  or browser (on Android usually Google's) and may process microphone audio on that provider's servers;
+  <strong>(d)</strong> the backup and share buttons, which hand a file only to the destination you choose.
+  Once a Gemini key is set, each new recording is sent for transcription when it ends. Recordings over
+  15 MB are stored on Google's servers while they are transcribed; the app deletes the file as soon as
+  the text is back, and Google removes such files automatically after 48 hours. Without an API key and
+  without using dictation or translation, nothing leaves your device.
 </p>
 <p>
   The microphone is used only while you are actively recording; the app never listens in the background.
@@ -174,8 +205,31 @@
 </p>
 <p>Contact: <strong><a href="mailto:beagleappsstudio@gmail.com">beagleappsstudio@gmail.com</a></strong></p>
 
+<h1 style="font-size:1.35rem">Datenschutzerklärung (deutsche Zusammenfassung)</h1>
+<p>
+  <strong>Dyktafon AI</strong> ist ein Diktiergerät. Alle Aufnahmen, Transkripte und Einstellungen
+  werden <strong>nur auf deinem Gerät</strong> gespeichert. Der Entwickler erhebt keinerlei Daten:
+  Es gibt keinen Server, kein Konto, keine Analyse, keine Werbung und kein Tracking. Die Cloud-Sicherung
+  von Android ist für diese App deaktiviert.
+</p>
+<p>
+  Daten verlassen dein Gerät nur, wenn du bewusst eine optionale Funktion nutzt:
+  <strong>(a)</strong> Transkription und KI-Notizen, die <em>deinen eigenen</em> Google-Gemini-API-Schlüssel
+  erfordern und die Aufnahme bzw. ihr Transkript an Google senden;
+  <strong>(b)</strong> Übersetzung, die den Text (nie den Ton) an MyMemory und, wenn ein Schlüssel gesetzt
+  ist, an Google Gemini sendet;
+  <strong>(c)</strong> Live-Diktat, das den Spracherkennungsdienst deines Telefons oder Browsers nutzt
+  (unter Android meist den von Google) und den Mikrofonton auf dessen Servern verarbeiten kann;
+  <strong>(d)</strong> Sicherung und Teilen, die eine Datei nur an das von dir gewählte Ziel übergeben.
+  Sobald ein Gemini-Schlüssel gesetzt ist, wird jede neue Aufnahme nach dem Ende zur Transkription gesendet.
+  Aufnahmen über 15 MB werden für die Dauer der Transkription auf Servern von Google gespeichert; die App
+  löscht die Datei, sobald der Text da ist, und Google entfernt solche Dateien automatisch nach 48 Stunden.
+  Ohne API-Schlüssel und ohne Diktat oder Übersetzung verlässt nichts dein Gerät.
+</p>
+<p>Kontakt: <strong><a href="mailto:beagleappsstudio@gmail.com">beagleappsstudio@gmail.com</a></strong></p>
+
 <footer>
-  Dyktafon AI — polityka prywatności · ostatnia aktualizacja 4 września 2026
+  Dyktafon AI — polityka prywatności · ostatnia aktualizacja 12 listopada 2026
 </footer>
 
 </body>
